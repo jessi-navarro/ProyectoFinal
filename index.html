@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./logos/Logo-TH.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <title>Tienda Hogar</title>
+</head>
+
+<body>
+    <header>
+        <center><img width="150px" height="150px" class="logoHome" src="./logos/Logo-TH.png" alt="logo-TH"></center>
+        <center><h1>TIENDA HOGAR</h1></center>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./contacto.html">Contacto</a>
+                </li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+
+    </header>
+
+
+    <main>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner mt-3">
+            <div class="carousel-item active">
+                <img src="./imgs-banners/PLANTAS.png" class="d-block w-100" alt="Banner plantas">
+            </div>
+            <div class="carousel-item">
+                <img src="./imgs-banners/COCINA.png" class="d-block w-100" alt="Banner cocina">
+            </div>
+            <div class="carousel-item">
+                <img src="./imgs-banners/HOGAR.png" class="d-block w-100" alt="Banner hogar">
+            </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <br>
+
+        <center><h2>PLANTAS PARA EL HOGAR</h2></center>
+        <div id="contenedorPlantas" class="contenedorHome">
+        </div>
+
+        <br>
+        <br>
+
+        <img class="bannerMedio d-block w-100" src="./imgs-banners/Banner-medio.png" alt="Banner bienvenidos">
+
+        <br>
+        <br>
+
+        <center><h2>LA COCINA SOÑADA</h2></center>
+        <div id="contenedorCocina" class="contenedorHome">
+        </div>
+
+        <br>
+        <br>
+
+        <center><h2>QUIÉNES SOMOS?</h2></center>
+        <div class="quienesSomos">
+            <center><p>Somos una empresa familiar a la que le encantan los productos de decoración del hogar. Venimos de distintas actividades y profesiones con la visión de <i> inspirar y ayudar a las personas para que vivan de manera más placentera</i> y disfrutando nuestros objetos.</p>
+
+            <p>Trabajamos diariamente en buscar productos que tengan un <b> buen diseño, funcionalidad, de buena calidad y que estén disponibles a un precio accesible.</b></p> 
+            
+            <p>Nuestra misión es ofrecer una amplia variedad de productos de bazar y decoración del hogar a precios accesibles para la mayoría de las personas.</p></center>
+        </div>
+        <br>
+        <br>
+
+        <center><h2>CON AMOR, PARA CASA</h2></center>
+        <div id="contenedorHogar" class="contenedorHome">
+        </div>
+
+        <br>
+        <br>
+    
+        <center><button id="botonCarrito" class="botonCarrito">VER CARRITO</button></center>
+
+
+
+
+    </main>
+
+    <hr>
+
+    <footer>
+        <img width="50px" height="50px" src="./logos/email-png.png" alt="Contacto">
+        <img width="50px" height="50px" src="./logos/LOGO-IG.png" alt="Redes">
+        <img width="50px" height="50px" src="./logos/Logo-TH.png" alt="Nosotros">
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>

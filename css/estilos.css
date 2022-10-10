@@ -1,0 +1,65 @@
+body{
+    margin: 2px;
+}
+
+/* header{
+    background-color: white;
+    position: sticky; 
+    top: 80px;
+} */
+
+.navbar{
+    font-size: large;
+}
+
+.bannerMedio{
+    height: 300px;
+}
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;   
+}
+
+.contenedorHome{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.card{
+    text-align: center;
+}
+
+.btn{
+    margin: 5px;
+    background-color: blueviolet;
+    border-color: blueviolet;
+}
+
+.btn:hover {
+    font-weight: bold;
+    background-color: blueviolet;    
+}
+
+.quienesSomos{
+    margin: 5px;
+    text-align: center;
+}
+
+.botonCarrito{
+    background-color: white;
+    color: blueviolet;
+    border-color: blueviolet;
+    border-radius: 8%;
+}
+
+.botonCarrito:hover {
+    font-weight: bold;
+}
+
+.nav-link:hover{
+    font-weight: bold;
+}
+
