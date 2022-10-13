@@ -44,7 +44,17 @@ listadoPlantas.forEach ((producto) => {
     contenedorPlantas.append (productoRenderizado);
     let boton = document.getElementById (producto.id);
     boton.addEventListener ("click", () => comprarProducto(producto));
-    boton.addEventListener ("click", () => localStorage.setItem("carrito", JSON.stringify(carrito)));
+    boton.addEventListener ("click", () => {
+        localStorage.setItem ("carrito", JSON.stringify(carrito)),
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Agregado al carrito!',
+            showConfirmButton: false,
+            timer: 1500
+        })
+        }
+        );
 });
 
     
@@ -74,7 +84,17 @@ listadoCocina.forEach ((producto) => {
     contenedorCocina.append (productoRenderizado);
     let boton = document.getElementById (producto.id);
     boton.addEventListener ("click", () => comprarProducto(producto));
-    boton.addEventListener ("click", () => localStorage.setItem("carrito", JSON.stringify(carrito)));
+    boton.addEventListener ("click", () => {
+        localStorage.setItem ("carrito", JSON.stringify(carrito)),
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Agregado al carrito!',
+            showConfirmButton: false,
+            timer: 1500
+        })
+        }
+        );
 });
 
     
@@ -102,7 +122,17 @@ listadoHogar.forEach ((producto) => {
     contenedorHogar.append (productoRenderizado);
     let boton = document.getElementById (producto.id);
     boton.addEventListener ("click", () => comprarProducto(producto));
-    boton.addEventListener ("click", () => localStorage.setItem("carrito", JSON.stringify(carrito)));
+    boton.addEventListener ("click", () => {
+        localStorage.setItem ("carrito", JSON.stringify(carrito)),
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Agregado al carrito!',
+            showConfirmButton: false,
+            timer: 1500
+        })
+        }
+        );
 });
 
 
