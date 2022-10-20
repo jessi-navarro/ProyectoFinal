@@ -162,7 +162,27 @@ let comprarProducto = (producto) => {
 
 
 
-//Mostrar productos
 
 
+//Traer info de json
+
+const textoPlantas = document.getElementById ("textoPlantas");
+
+fetch("./data.json")
+.then (response => response.json ())
+.then (data => {
+    data.forEach (item =>{
+        const p = document.createElement ("p");
+        p.innerHTML = `
+        <h3><center>${item.subtitulo}</center></h3>
+        <p><center>${item.texto}</center></p>
+        <hr>
+        `;
+
+        textoPlantas.append (p);
+    })
+
+
+
+})
 
