@@ -140,6 +140,7 @@ listadoHogar.forEach ((producto) => {
 //Carrito
 let carrito = [];
 
+
 let comprarProducto = (producto) => {
     let productoExiste = carrito.find (item => item.id === producto.id);
     if (productoExiste === undefined){
@@ -158,7 +159,19 @@ let comprarProducto = (producto) => {
     };
 
     let botonCarrito = document.getElementById ("botonCarrito");
-    botonCarrito.addEventListener ("click", () => (carrito.length === 0 && console.log("El carrito está vacío.")));
+    botonCarrito.addEventListener ("click", () => {
+        (carrito.length === 0 && console.log("El carrito está vacío.")),
+        Swal.fire({
+            title: 'TU CARRITO',
+            text: "Productos agregados",
+            imageUrl: 'https://prints.ultracoloringpages.com/c1cbabf9b2ef871625b94b55d8897cc4.png',
+            imageHeight: 100,
+            imageAlt: 100,
+            showCancelButton: false,
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Finalizar compra'
+    })
+    });
 
 
 
@@ -180,9 +193,7 @@ fetch("./data.json")
         `;
 
         textoPlantas.append (p);
-    })
+    });
 
-
-
-})
+});
 
