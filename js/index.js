@@ -59,13 +59,11 @@ listadoPlantas.forEach ((producto) => {
 
     
 
-
-
 //Productos cocina
 listadoCocina.push (new Producto ({id: 5, nombre: "Dispenser 4 L.", precio: 5400, foto: "./imgs-prods/cocina/Dispenser.jpg"}));
 listadoCocina.push (new Producto ({id: 6, nombre: "Copa Hurricane", precio: 4300, foto: "./imgs-prods/cocina/Hurricane.png"}));
-listadoCocina.push (new Producto  ({id: 7, nombre: "Taza Té Mozart", precio: 6300, foto: "./imgs-prods/cocina/Mozart-Te.png"}));
-listadoCocina.push (new Producto  ({id: 8, nombre: "Secaplatos Bacha", precio: 9600, foto: "./imgs-prods/cocina/Secaplatos-sobre-bacha.jpeg"}));
+listadoCocina.push (new Producto ({id: 7, nombre: "Taza Té Mozart", precio: 6300, foto: "./imgs-prods/cocina/Mozart-Te.png"}));
+listadoCocina.push (new Producto ({id: 8, nombre: "Secaplatos Bacha", precio: 9600, foto: "./imgs-prods/cocina/Secaplatos-sobre-bacha.jpeg"}));
 
 
 
@@ -140,7 +138,6 @@ listadoHogar.forEach ((producto) => {
 //Carrito
 let carrito = [];
 
-
 let comprarProducto = (producto) => {
     let productoExiste = carrito.find (item => item.id === producto.id);
     if (productoExiste === undefined){
@@ -154,46 +151,79 @@ let comprarProducto = (producto) => {
         }else{
             productoExiste.precio = productoExiste.precio + producto.precio;
             productoExiste.cantidad++;
-        }
-        
+        }        
     };
 
-    let botonCarrito = document.getElementById ("botonCarrito");
-    botonCarrito.addEventListener ("click", () => {
-        (carrito.length === 0 && console.log("El carrito está vacío.")),
-        Swal.fire({
-            title: 'TU CARRITO',
-            text: "Productos agregados",
-            imageUrl: 'https://prints.ultracoloringpages.com/c1cbabf9b2ef871625b94b55d8897cc4.png',
-            imageHeight: 100,
-            imageAlt: 100,
-            showCancelButton: false,
-            confirmButtonColor: '#3085d6',
-            confirmButtonText: 'Finalizar compra'
-    })
+
+    
+//Carrito Renderizado
+let botonCarrito = document.getElementById ("botonCarrito");
+let contenedorCarrito = document.getElementById ("contenedorCarrito");
+
+botonCarrito.addEventListener ("click", () => {
+    carrito.length === 0 && Swal.fire('El carrito está vacío.');
+
+    JSON.parse (localStorage.getItem("carrito"));
+    localStorage.setItem ("carrito", JSON.stringify (carrito));
+
+    carrito.forEach ((producto) => {
+        let carritoRenderizado = document.createElement ("div");
+        carritoRenderizado.innerHTML = `
+        <center><div class="carritoRenderizado"> 
+        <h5>Producto: ${producto.nombre}</h5>
+        <br>
+        <h6>Precio: $${producto.precio}</h6>
+        <br>
+        </div></center>
+    `
+    
+    contenedorCarrito.append (carritoRenderizado); 
     });
+});
+
+
+//Finalizar compra
+let traerCarrito = document.getElementById ("carritoRenderizado");
+
+let botonFinalizar = document.getElementById ("botonFinalizar");
+
+botonFinalizar.addEventListener ("click", () =>{
+    carrito.length === 0 && Swal.fire('El carrito está vacío.');
+    carrito.length !== 0 && Swal.fire({
+            title: 'Gracias por tu compra!',
+            text: 'Nos vamos a estar contactando con vos para coordinar la entrega.',
+            imageUrl: 'https://cdn-icons-png.flaticon.com/512/3394/3394009.png',
+            imageWidth: 150,
+            imageHeight: 150,
+            imageAlt: 'Custom image',
+            })
+        localStorage.clear();
+        carrito = []; 
+        traerCarrito.innerHTML = "";
+        });
 
 
 
+    
 
-
-//Traer info de json
+//FETCH
 
 const textoPlantas = document.getElementById ("textoPlantas");
 
 fetch("./data.json")
-.then (response => response.json ())
-.then (data => {
-    data.forEach (item =>{
-        const p = document.createElement ("p");
-        p.innerHTML = `
-        <h3><center>${item.subtitulo}</center></h3>
-        <p><center>${item.texto}</center></p>
-        <hr>
-        `;
+    .then (response => response.json ())
+    .then (data => {
+        data.forEach (item =>{
+            const p = document.createElement ("p");
+            p.innerHTML = `
+            <h3><center>${item.subtitulo}</center></h3>
+            <p><center>${item.texto}</center></p>
+            <hr>
+            `;
 
         textoPlantas.append (p);
     });
 
 });
+
 

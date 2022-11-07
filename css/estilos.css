@@ -1,15 +1,29 @@
+/* Estilos generales del HTML */
+
 body{
     margin: 2px;
 }
 
-/* header{
-    background-color: white;
-    position: sticky; 
-    top: 80px;
-} */
-
 .navbar{
     font-size: large;
+}
+
+.nav-item{
+    margin: 8px;
+    border: 2px white;
+}
+
+.nav-link:hover{
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    border: white;
+    border-radius: 10%;
+}
+
+#quienesSomos{
+    margin: 5px;
+    text-align: center;
 }
 
 .bannerMedio{
@@ -21,6 +35,25 @@ footer{
     justify-content: space-around;
     flex-direction: row;   
 }
+
+
+
+/* Estilos en sección de plantas */
+
+.tituloPlantas{
+    text-transform: uppercase;
+}
+
+#textoPlantas{
+    background-image: url("https://ornamentalis.com/wp-content/uploads/2021/02/Decoracion-con-plantas-en-pared.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-size: large;
+}
+
+
+/* Estilos de la tarjeta de productos */
 
 .contenedorHome{
     display: flex;
@@ -40,26 +73,59 @@ footer{
 
 .btn:hover {
     font-weight: bold;
-    background-color: blueviolet;    
+    background-color: white;
+    color: blueviolet;    
 }
 
-.quienesSomos{
-    margin: 5px;
-    text-align: center;
-}
 
-.botonCarrito{
+/* Estilos del carrito */
+
+#botonCarrito{
     background-color: white;
     color: blueviolet;
     border-color: blueviolet;
     border-radius: 8%;
 }
 
-.botonCarrito:hover {
+#botonCarrito:hover {
     font-weight: bold;
 }
 
-.nav-link:hover{
+.carritoRenderizado{
+    width: 500px;
+    height: auto;
+    background-color: blueviolet;
+    opacity: 80%;
+    border-radius: 5%;
+}
+
+
+.carritoRenderizado:hover{
+    opacity: 100%;
+}
+
+#botonFinalizar{
+    background-color: white;
+    color: blueviolet;
+    border-color: blueviolet;
+    border-radius: 8%;
+}
+
+
+#botonFinalizar:hover {
     font-weight: bold;
+}
+
+.botonesFinal{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+/* Estilos del formulario */
+
+.campoContacto{
+    width: 500px;
+    height: 100px;
 }
 
