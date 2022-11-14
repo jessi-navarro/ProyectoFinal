@@ -151,7 +151,8 @@ let comprarProducto = (producto) => {
         }else{
             productoExiste.precio = productoExiste.precio + producto.precio;
             productoExiste.cantidad++;
-        }        
+        }
+        
     };
 
 
@@ -182,6 +183,20 @@ botonCarrito.addEventListener ("click", () => {
 });
 
 
+
+//Guardar carrito
+const guardarCarrito = () => {
+    carrito.length = 0;
+    let storage = JSON.parse(localStorage.getItem("carrito"));
+    if(storage !== null){
+        carrito = storage;
+    }
+}
+
+guardarCarrito ();
+
+
+
 //Finalizar compra
 let traerCarrito = document.getElementById ("carritoRenderizado");
 
@@ -201,7 +216,6 @@ botonFinalizar.addEventListener ("click", () =>{
         carrito = []; 
         traerCarrito.innerHTML = "";
         });
-
 
 
     
